@@ -2,6 +2,8 @@
 
 > Building an open-source ecosystem for the Skywalker X8: telemetry, diagnostics, ground station, sensors, avionics and autonomous flight.
 
+![Skywalker X8 Concept](assets/skywalker_x8_concept_v1.png)
+
 ---
 
 ## Overview
