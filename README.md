@@ -14,7 +14,7 @@ The goal is not only to build a capable UAV, but also to develop the complete so
 
 ---
 
-## Current Features
+## Current Development Focus
 
 - ZTW Mantis G2 telemetry decoder
 - UART communication tools
