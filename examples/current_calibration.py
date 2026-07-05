@@ -28,7 +28,22 @@ BAUD_RATE = 115200
 FRAME_LENGTH = 32
 POLE_PAIRS = 7
 
-TARGET_CURRENTS_A = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
+TARGET_CURRENTS_A = [
+    0.5,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    8,
+    10,
+    12,
+    14,
+    16,
+    18,
+    20,
+]
 
 
 def u16_be(data: bytes, index: int) -> int:

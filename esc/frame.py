@@ -1,6 +1,8 @@
+"""Decoded ZTW Mantis G2 telemetry frame."""
+
 from dataclasses import dataclass
 
-from .checksum import is_checksum_valid
+from .checksum import is_checksum_valid, u16_be
 from .protocol import (
     FRAME_LENGTH,
     HEADER,
@@ -9,14 +11,12 @@ from .protocol import (
     RPM_SCALE,
     BEC_VOLTAGE_SCALE,
     DEFAULT_POLE_PAIRS,
+    STATE_H_BITS,
+    STATE_L_BITS,
 )
 
 
-def u16_be(data: bytes, index: int) -> int:
-    return (data[index] << 8) | data[index + 1]
-
-
-@dataclass
+@dataclass(frozen=True)
 class ZTWMantisFrame:
     raw: bytes
     pole_pairs: int = DEFAULT_POLE_PAIRS
@@ -91,32 +91,13 @@ class ZTWMantisFrame:
 
     @property
     def status_messages(self) -> list[str]:
-        messages = []
+        messages: list[str] = []
 
-        state_l_bits = {
-            0x01: "Short circuit protection",
-            0x02: "Motor wire break",
-            0x04: "PPM throttle lost",
-            0x08: "Power-on throttle not zero",
-            0x10: "Low-voltage protection",
-            0x20: "Temperature protection",
-            0x40: "Start locked-rotor protection",
-            0x80: "Current protection",
-        }
-
-        state_h_bits = {
-            0x01: "PPM throttle out of range",
-            0x02: "UART throttle out of range",
-            0x04: "UART throttle lost",
-            0x08: "CAN throttle lost",
-            0x10: "Battery voltage out of range",
-        }
-
-        for bit, text in state_l_bits.items():
+        for bit, text in STATE_L_BITS.items():
             if self.state_l & bit:
                 messages.append(text)
 
-        for bit, text in state_h_bits.items():
+        for bit, text in STATE_H_BITS.items():
             if self.state_h & bit:
                 messages.append(text)
 
