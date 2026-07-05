@@ -1,7 +1,3 @@
-
-## `esc/protocol.py`
-
-```python
 """ZTW Mantis G2 telemetry protocol constants."""
 
 FRAME_LENGTH = 32

@@ -12,8 +12,7 @@ def calculate_checksum(frame: bytes) -> int:
 
 
 def read_checksum(frame: bytes) -> int:
-    return u16_be(frame, 30)
-
+    return frame[30] | (frame[31] << 8)
 
 def is_checksum_valid(frame: bytes) -> bool:
     if len(frame) != FRAME_LENGTH:
