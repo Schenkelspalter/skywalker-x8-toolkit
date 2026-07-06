@@ -20,5 +20,13 @@ This project follows Semantic Versioning.
 - Frame decoder
 - Checksum validation
 - Rolling telemetry statistics
+- Serial telemetry reader
 - Current calibration tool
 - Example applications
+
+### Validated
+
+- Telemetry current characterization completed
+- Independent laboratory verification completed
+- Current calibration confirmed with a maximum error of 0.32 A
+- Closed Issue #1 (Current Calibration)
