@@ -69,6 +69,30 @@ The project focuses on:
 
 ---
 
+## Current Status
+
+The first telemetry core milestone is implemented and validated.
+
+Completed:
+
+- Serial telemetry reader for ZTW Mantis G2 ESC telemetry
+- Frame synchronization and checksum validation
+- Decoded telemetry frame representation
+- Rolling telemetry statistics
+- Current calibration tool with averaged snapshots
+- Experimental current characterization
+- Independent verification of the current calibration model
+
+Validation results:
+
+- Mean absolute error: 0.18 A
+- RMSE: 0.20 A
+- Maximum error: 0.32 A
+
+The current calibration has been validated for the tested hardware configuration and is documented in Issue #1.
+
+---
+
 ## Project Progress
 
 - [x] ESC Telemetry Core
