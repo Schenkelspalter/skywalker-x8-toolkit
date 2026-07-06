@@ -30,8 +30,6 @@ The goal is not only to build a capable UAV, but also to develop the complete so
 
 - ESP32 telemetry bridge
 - MAVLink output
-- MQTT interface
-- Home Assistant integration
 
 ### Ground Station
 
