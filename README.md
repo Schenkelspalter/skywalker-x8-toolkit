@@ -69,6 +69,18 @@ The project focuses on:
 
 ---
 
+## Project Progress
+
+- [x] ESC Telemetry Core
+- [ ] MAVLink Interface
+- [ ] Ground Station
+- [ ] Camera Gimbal
+- [ ] Sensor Fusion
+- [ ] Flight Integration
+- [ ] Autonomous Mission Support
+
+---
+
 ## Roadmap
 
 ### Version 0.x
